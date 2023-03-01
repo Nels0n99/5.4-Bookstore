@@ -1,0 +1,95 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: rgba(154, 27, 155, 0.56);
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  display: inline-block;
+  color: dodgerblue;
+  margin-right: 16px;
+  text-decoration: none;
+}
+
+nav{
+  width: 100%;
+  background: #c1ffc1;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul{
+  display: flex;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.store-title{
+  font-size: 20px;
+  padding-left: 64px;
+}
+
+nav li a{
+  display: block;
+  padding: 20px 30px;
+  color: #0306db;
+  font-size: 18px;
+}
+
+.nav-content{
+  max-width: 1300px;
+  width: 100%;
+}
+
+.container{
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-container{
+  background: #FDFD96;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+table{
+  width: 100%;
+}
+
+td, th{
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.form-input{
+  margin-bottom: 8px;
+}
+
+label{
+  display: block;
+  font-weight: bold;
+}
+
+.button{
+  border-radius: 12px;
+  padding: 4px 8px;
+  border: 1px solid gray;
+  color: black;
+  background: white;
+}
+
+.button.primary {
+  background-color: #075985;
+  color: white;
+  border-color: #075985;
+}
+
+img{
+  width: 400px;
+  height: 550px;
+}

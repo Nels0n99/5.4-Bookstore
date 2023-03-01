@@ -1,0 +1,5 @@
+extends ../layout
+
+block content
+    include ../mixins/authorForm
+    +authorForm(author, `/authors/edit/${author.id}`, `/authors/profile/${author.id}`)

@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+    h3= book.title
+    a(href=`/books/edit/${book.id}`) Edit Book
+    a(href=`/books/delete/${book.id}`) Delete Book
+    div
+        p Author(s): #{book.author}, #{book.author2}, #{book.author3}
+        p Publisher: #{book.publisher}
+        p Genre: #{book.genre}
+        p Page Numbers: #{book.page_numbers}
+        p Book Cover:
+            img(src= book.image_cover)
+        p= book.description
+    div.books
+        h4 Authors
+        if availableAuthors.length>0
+            form(action=`/books/${book.id}/apply` method='post')
+                select(name='author' id='author' autocomplete=off)
+                    each author in availableAuthors
+                        option(value= author.id) #{author.first_name}
+                button.button.primary(type='submit') Apply
+        else
+            p No authors available
+    div.authors
+        h4 Author(s)
+        if book.authors.length>0
+            table
+                thead
+                    tr
+                        th First
+                        th Last
+                        th DOB
+                        th Books Written/Co-written
+                        th
+                tbody
+                    each author in book.authors
+                        tr
+                            td= author.first_name
+                            td= author.last_name
+                            td= author.date_of_birth
+                            td= author.books_written
+                            td
+                                a(href=`/authors/profile/${author.id}`) View Author
+                                a(href=`/books/${book.id}/removeAuthor/${author.id}`) Remove Author
+        else
+            p There are no authors in this book
